@@ -6,6 +6,10 @@ namespace Grupparbete_Garaget
     {
         static void Main(string[] args)
         {
+            MarkTestClass.MyMark();
+
+
+
             Garage myGarage = new Garage();
             /*if (UserInput == 1)
             {
