@@ -8,115 +8,201 @@ namespace Grupparbete_Garaget
     {
         static void Main(string[] args)
         {
-            Garage myGarage = new Garage();
-            /*if (UserInput == 1)
-            {
-                myShop.AddVehicles();
-
-            }*/
+            Console.WriteLine("Set Capacity of garage:");
+            int MaxInput = Convert.ToInt32(Console.ReadLine());
+            Garage<Vehicle> myGarage = new Garage<Vehicle>(MaxInput);
             myGarage.AddVehicles();
-
-            Console.WriteLine("\nWhat Vehicle do you want to extract? A Car, Truck or perhaps a Bus?\n");
-            while (myGarage.GarageOpen)
+            while (true)
             {
-                myGarage.ListVehicles();
-                string UserInput = Console.ReadLine().ToLower();
-                Console.WriteLine();
+                Console.WriteLine("Are you looking for a Vehicle? Y/N");
+                string myInput = Console.ReadLine();
+                //ListTypeOfVehicles(myGarage);
+                //myInput = Console.ReadLine();
 
-                Vehicle VehiclePick = myGarage.RemoveVehicle(UserInput);
-                if (VehiclePick != null)
+                //Skapa ny bil !!!!!FIXA MENY GREJ SNYGGA TILL!!!!!
+                /*Console.WriteLine("Input car specs:\nCar max speed,Origin,Color,Regnumber,Wheels ");
+                string UserSpecs = Console.ReadLine();
+                string[] myArray = UserSpecs.Split(",");
+                Car newCar = new Car();
+                newCar.CarMaxSpeed = Convert.ToInt32(myArray[0]);
+                newCar.CarOrigin = myArray[1];
+                newCar.CarTowbar = true;
+                newCar.VehicleColor = myArray[2];
+                newCar.VehicleRegNumb = myArray[3];
+                newCar.VehicleWheels = Convert.ToInt32(myArray[4]);
+                myGarage.Add(newCar);*/
+
+                if (myInput.ToLower() == "y" || myInput.ToLower() == "yes")
                 {
-                    if (VehiclePick.GetType().Name == "Car")
-                    {
-                        Console.Clear();
-                        Car tmp = (Car)VehiclePick;
-                        Console.WriteLine("Drive safe!\n\n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Towbar: \t{3}\n Origin: \t{4}\n MaxSpeed: \t{5}km/h\n " +
-                            "\nWant one more vehicle? Press Enter.\nOtherwise Type \"exit\" to leave the garage!\n"
-                            , VehiclePick.VehicleColor, VehiclePick.VehicleWheels, VehiclePick.VehicleRegNumb, tmp.CarTowbar, tmp.CarOrigin, tmp.CarMaxSpeed);
-                        string UserAnswer = Console.ReadLine().ToLower();
-                        if (UserAnswer == "exit")
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                    }
-                    else if (VehiclePick.GetType().Name == "Truck")
-                    {
-                        Console.Clear();
-                        Truck tmp = (Truck)VehiclePick;
-                        Console.WriteLine("Drive safe!\n\n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Trailer: \t{3}\n MaxLoad: \t{4}ton\n Company: \t{5}\n" +
-                            "\nWant one more vehicle? Press Enter.\nOtherwise Type \"exit\" to leave the garage!\n"
-                            , VehiclePick.VehicleColor, VehiclePick.VehicleWheels, VehiclePick.VehicleRegNumb, tmp.TruckTrailer, tmp.TruckMaxLoad, tmp.TruckCompany);
-                        string UserAnswer = Console.ReadLine().ToLower();
-                        if (UserAnswer == "exit")
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                    }
-                    else if (VehiclePick.GetType().Name == "Bus")
-                    {
-                        Console.Clear();
-                        Bus tmp = (Bus)VehiclePick;
-                        Console.WriteLine("Drive safe!\n\n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Schoolbus: \t{3}\n Field: \t{4}\n Capacity: \t{5}persons\n" +
-                            "\nWant one more vehicle? Press Enter.\nOtherwise Type \"exit\" to leave the garage!\n"
-                            , VehiclePick.VehicleColor, VehiclePick.VehicleWheels, VehiclePick.VehicleRegNumb, tmp.BusSchool, tmp.BusPurpose, tmp.BusCapacity);
-                        string UserAnswer = Console.ReadLine().ToLower();
-                        if (UserAnswer == "exit")
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                    }
-                    else if (VehiclePick.GetType().Name == "Moped")
-                    {
-                        Console.Clear();
-                        Moped tmp = (Moped)VehiclePick;
-                        Console.WriteLine("Drive safe!\n\n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Legal: \t{3}\n How Cool: \t{4}\n Capacity: \t{5}km/h\n" +
-                            "\nWant one more vehicle? Press Enter.\nOtherwise Type \"exit\" to leave the garage!\n"
-                            , VehiclePick.VehicleColor, VehiclePick.VehicleWheels, VehiclePick.VehicleRegNumb, tmp.MopedLegal, tmp.MopedHowCool, tmp.MopedMaxSpeed);
-                        string UserAnswer = Console.ReadLine().ToLower();
-                        if (UserAnswer == "exit")
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                    }
-                    else if (VehiclePick.GetType().Name == "Motorcycle")
-                    {
-                        Console.Clear();
-                        Motorcycle tmp = (Motorcycle)VehiclePick;
-                        Console.WriteLine("Drive safe!\n\n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Stickers: \t{3}\n Field: \t{4}\n MaxFuel: \t{5}liter\n" +
-                            "\nWant one more vehicle? Press Enter.\nOtherwise Type \"exit\" to leave the garage!\n"
-                            , VehiclePick.VehicleColor, VehiclePick.VehicleWheels, VehiclePick.VehicleRegNumb, tmp.BikeStickers, tmp.BikePurpose, tmp.BikeMaxFuel);
-                        string UserAnswer = Console.ReadLine().ToLower();
-                        if (UserAnswer == "exit")
-                        {
-                            Console.Clear();
-                            break;
-                        }
-                    }
+                    Console.WriteLine();
+                    ListVehicle(myGarage);
+                    Console.WriteLine("----------------------------------------------------");
+                    Console.WriteLine("Find a vehicle in the garage by adding a parameter.");
+                    Console.WriteLine("Press 1. To find with a registration number.");
+                    Console.WriteLine("Press 2. To find all with colour.");
+                    Console.WriteLine("Press 3. To find all with a specified number of wheels.");
+                    Console.WriteLine("Press 4. To find all with a minimum number of passengers.");
+                    Console.WriteLine("Press 5. To find all with cabriolet");
+                    Console.WriteLine("Press 0. Exit the finding!");
 
+                    int myInt = int.Parse(Console.ReadLine());
+
+                    switch (myInt)
+                    {
+                        case 1:
+                            Console.WriteLine("Input the <registration number> of your vehicle that you are looking after");
+                            Console.WriteLine("Example of how a registration number could look: abc-123");
+                            Console.Write("Input reg number: ");
+                            string UserInput = Console.ReadLine();
+                            SearchVehicle(myGarage, UserInput, myInt);
+                            //Call the search method
+
+                            break;
+                        case 2:
+                            Console.WriteLine("Input the <colour> of your vehicle that you are looking after");
+                            Console.WriteLine("Example on a colour: white");
+                            Console.Write("Input colour: ");
+                            string myColour = Console.ReadLine();
+                            //Call the search method
+
+                            break;
+                        case 3:
+                            Console.WriteLine("Input the amount of <wheels> your vehicle that you are looking for have");
+                            Console.WriteLine("Example on how to input amount of wheels: 4");
+                            Console.Write("Input wheels: ");
+                            int wheelNum = int.Parse(Console.ReadLine());
+                            //Call the search method
+
+                            break;
+                        case 4:
+                            Console.WriteLine("Input the minimum amount of passangers that you are looking for in your vehicle");
+                            Console.WriteLine("Example on how to input min amount of passangers: 4");
+                            Console.Write("Input passangers: ");
+                            int minNumPas = int.Parse(Console.ReadLine());
+                            //Call the search method
+
+                            break;
+                        case 5:
+                            Console.WriteLine("Are you looking for a car with a cabriolet Y/N?");
+                            Console.Write("Input yes or no: ");
+                            string cabriolet = Console.ReadLine();
+                            //Call the search method
+
+                            break;
+                        default:
+                            Console.WriteLine("Just add the close method, easy");
+                            //Call the close method
+
+                            break;
+                    }
                 }
                 else
                 {
-                    Console.Clear();
-                    Console.WriteLine("We cant find your vehicle. Want another ride? Otherwise type \"exit\" to leave the shop.");
-                    string UserAnswer = Console.ReadLine().ToLower();
-
-                    if (UserAnswer == "exit")
-                    {
-                        Console.Clear();
-                        break;
-                    }
+                    break;
                 }
             }
-            Console.WriteLine("Remeber, drive safe!");
-            //Console.WriteLine("\nCash register is at :\t " + myShop.Cash + "$");
-            //myGarage.AddVehicles();
-            //myGarage.ListVehicles();
+            Console.WriteLine("bye bye");
+            Console.WriteLine("some changes");
+            //sakld
+            Console.WriteLine("hello");
 
-            Console.ReadKey();
+            static void ListVehicle(Garage<Vehicle>myGarage)
+            {
+                foreach (Vehicle item in myGarage)
+                {
+                    Console.WriteLine(item.GetInfo());
+                }
+            }
+            static void ListTypeOfVehicles(Garage<Vehicle> myGarage)
+            {
+                Console.WriteLine("Vehicles in garage");
+                int Cars = 0;
+                int Trucks = 0;
+                int Buses = 0;
+                int Mopeds = 0;
+                int Motorcycles = 0;
+                foreach (Vehicle item in myGarage)
+                {
+                    switch (item.GetType().Name)
+                    {
+                        case "Car":
+                            Cars += 1;
+                            break;
+                        case "Truck":
+                            Trucks += 1;
+                            break;
+                        case "Bus":
+                            Buses += 1;
+                            break;
+                        case "Moped":
+                            Mopeds += 1;
+                            break;
+                        case "Motorcycle":
+                            Motorcycles += 1;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                Console.WriteLine("Number of Cars :\t" + Cars);
+                Console.WriteLine("Number of Trucks :\t" + Trucks);
+                Console.WriteLine("Number of Buses :\t" + Buses);
+                Console.WriteLine("Number of Mopeds :\t" + Mopeds);
+                Console.WriteLine("Number of Motorcycles :\t" + Motorcycles);
+            }
+            static void SearchVehicle(Garage<Vehicle> myGarage, string UserInput, int Option) 
+            {
+                bool VehicleFound = false;
+                foreach (Vehicle item in myGarage)
+                {
+                    switch (Option)
+                    {
+                        case 1:
+                            if (item != null && item.VehicleRegNumb.ToUpper() == UserInput.ToUpper())
+                            {
+                                VehicleFound = true;
+                                item.VehicleRegNumb = UserInput;
+                                Console.Clear();
+                                Console.WriteLine("The vehicle was found :");
+                                Console.WriteLine(item.GetInfo());
+                                Console.WriteLine();
+                                Console.WriteLine("Would you like to extract this vehicle? Y/N");
+                                UserInput = Console.ReadLine();
+
+                                if (UserInput.ToUpper() == "Y")
+                                {
+                                    myGarage.RemoveVehicle(item);
+                                    Console.WriteLine("Drive safe!");
+                                    break;
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                            break;
+                        case 2:
+                            //Color
+                            break;
+                        case 3:
+                            //wheels
+                            break;
+                        case 4:
+                            //passengers
+                            break;
+                        case 5:
+                            //cabriolet
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                }
+                if (VehicleFound == false)
+                {
+                    Console.WriteLine("The vehicle was not found!");
+                }
+            }
         }
     }
 }
