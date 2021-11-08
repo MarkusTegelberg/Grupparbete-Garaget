@@ -9,18 +9,16 @@ namespace Grupparbete_Garaget
     {
         //List<Vehicle> VehicleList = new List<Vehicle>();
         Vehicle[] VehicleArray;
-
+        int max = 20;
         public GarageEnum GetEnumerator()
         {
             return new GarageEnum(VehicleArray);
         }
-
         public Garage(int MaxInput)
         {
             VehicleArray = new Vehicle[0];
             max = MaxInput;
         }
-        int max = 20;
         public void Add(Vehicle v)
         {
             if (VehicleArray.Length > max - 1)
@@ -28,7 +26,7 @@ namespace Grupparbete_Garaget
                 Console.WriteLine("Garage full, car was thrown out");
                 return;
             }
-            Vehicle[] tmp = new T[VehicleArray.Length + 1];
+            Vehicle[] tmp = new Vehicle[VehicleArray.Length + 1];
             VehicleArray.CopyTo(tmp, 0);
             tmp[VehicleArray.Length] = v;
             VehicleArray = tmp;
