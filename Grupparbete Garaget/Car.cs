@@ -22,7 +22,7 @@ namespace Grupparbete_Garaget
         }
         public override string GetInfo() 
         {
-            return string.Format("Available car: \nColor: \t\t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Towbar: \t{3}\n Origin: \t{4}\n MaxSpeed: \t{5}km/h\n"
+            return string.Format("Available car: \n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Towbar: \t{3}\n Origin: \t{4}\n MaxSpeed: \t{5}km/h\n"
                     , VehicleColor, VehicleWheels, VehicleRegNumb, CarTowbar, CarOrigin, CarMaxSpeed);
         }
     }

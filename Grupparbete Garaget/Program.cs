@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 //Markus Gren
 
@@ -8,6 +9,7 @@ namespace Grupparbete_Garaget
     {
         static void Main(string[] args)
         {
+            TextInfo TextInfo = CultureInfo.CurrentCulture.TextInfo;
             Console.WriteLine("Set Capacity of garage:");
             int MaxInput = Convert.ToInt32(Console.ReadLine());
             Garage<Vehicle> myGarage = new Garage<Vehicle>(MaxInput);
@@ -20,16 +22,23 @@ namespace Grupparbete_Garaget
                 //myInput = Console.ReadLine();
 
                 //Skapa ny bil !!!!!FIXA MENY GREJ SNYGGA TILL!!!!!
-                Console.WriteLine("Input car specs:\nIn format: \"Speed, Origin, Color, Regnumber, Wheels\"");
-                string UserSpecs = Console.ReadLine();
-                string[] myArray = UserSpecs.Split(",");
+                Console.WriteLine();
+                Console.WriteLine("Input car specs:");
+                string[] UserSpecs = new string[5];
+                string[] Specs = new string[5] { "Speed  ", "Origin ", "Color  ", "Regnumber", "Wheels " };
+                
+                for (int i = 0; i < UserSpecs.Length; i++)
+                {
+                    Console.Write(Specs[i] + " :\t");
+                    UserSpecs[i] = Console.ReadLine();
+                }
                 Car newCar = new Car();
-                newCar.CarMaxSpeed = Convert.ToInt32(myArray[0]);
-                newCar.CarOrigin = myArray[1];
+                newCar.CarMaxSpeed = Convert.ToInt32(UserSpecs[0]);
+                newCar.CarOrigin = TextInfo.ToTitleCase(UserSpecs[1]);
                 newCar.CarTowbar = true;
-                newCar.VehicleColor = myArray[2];
-                newCar.VehicleRegNumb = myArray[3];
-                newCar.VehicleWheels = Convert.ToInt32(myArray[4]);
+                newCar.VehicleColor = TextInfo.ToTitleCase(UserSpecs[2]);
+                newCar.VehicleRegNumb = UserSpecs[3].ToUpper();
+                newCar.VehicleWheels = Convert.ToInt32(UserSpecs[4]);
                 myGarage.Add(newCar);
 
                 if (myInput.ToLower() == "y" || myInput.ToLower() == "yes")
@@ -45,7 +54,7 @@ namespace Grupparbete_Garaget
                     Console.WriteLine("Press 5. To find all with cabriolet");
                     Console.WriteLine("Press 0. Exit the finding!");
 
-                    int myInt = int.Parse(Console.ReadLine());
+                    int myInt = int.Parse(Console.ReadLine());                
 
                     switch (myInt)
                     {

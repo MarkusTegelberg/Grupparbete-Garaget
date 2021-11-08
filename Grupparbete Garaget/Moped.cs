@@ -22,7 +22,7 @@ namespace Grupparbete_Garaget
         }
         public override string GetInfo()
         {
-            return string.Format("Available Moped: \nColor: \t\t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Legal: \t{3}\n How cool: \t{4}\n MaxSpeed: \t{5}km/h\n"
+            return string.Format("Available Moped: \n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Legal: \t{3}\n How cool: \t{4}\n MaxSpeed: \t{5}km/h\n"
                     , VehicleColor, VehicleWheels, VehicleRegNumb, MopedLegal, MopedHowCool, MopedMaxSpeed);
         }
     }

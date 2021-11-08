@@ -22,7 +22,7 @@ namespace Grupparbete_Garaget
         }
         public override string GetInfo()
         {
-            return string.Format("Available Truck: \nColor: \t\t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Trailer: \t{3}\n Company: \t{4}\n Maxload: \t{5}Tons/h\n"
+            return string.Format("Available Truck: \n Color: \t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Trailer: \t{3}\n Company: \t{4}\n Maxload: \t{5}Tons/h\n"
                     , VehicleColor, VehicleWheels, VehicleRegNumb, TruckTrailer, TruckCompany, TruckMaxLoad);
         }
     }
