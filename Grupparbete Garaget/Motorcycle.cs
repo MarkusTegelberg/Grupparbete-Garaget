@@ -22,7 +22,7 @@ namespace Grupparbete_Garaget
         }
         public override string GetInfo()
         {
-            return string.Format("Color: \t\t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Stickers: \t{3}\n How Purpose: \t{4}\n Capacity: \t{5}km/h\n"
+            return string.Format("Available MC: \nColor: \t\t{0}\n Wheels: \t{1}\n RegNumber: \t{2}\n Stickers: \t{3}\n How Purpose: \t{4}\n Capacity: \t{5}liter\n"
                     , VehicleColor, VehicleWheels, VehicleRegNumb, BikeStickers, BikePurpose, BikeMaxFuel);
         }
     }

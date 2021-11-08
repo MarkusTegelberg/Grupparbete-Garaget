@@ -20,7 +20,7 @@ namespace Grupparbete_Garaget
             VehicleArray = new Vehicle[0];
             max = MaxInput;
         }
-        int max = 15;
+        int max = 20;
         public void Add(Vehicle v)
         {
             if (VehicleArray.Length > max - 1)

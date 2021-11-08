@@ -20,7 +20,7 @@ namespace Grupparbete_Garaget
                 //myInput = Console.ReadLine();
 
                 //Skapa ny bil !!!!!FIXA MENY GREJ SNYGGA TILL!!!!!
-                /*Console.WriteLine("Input car specs:\nCar max speed,Origin,Color,Regnumber,Wheels ");
+                Console.WriteLine("Input car specs:\nIn format: \"Speed, Origin, Color, Regnumber, Wheels\"");
                 string UserSpecs = Console.ReadLine();
                 string[] myArray = UserSpecs.Split(",");
                 Car newCar = new Car();
@@ -30,7 +30,7 @@ namespace Grupparbete_Garaget
                 newCar.VehicleColor = myArray[2];
                 newCar.VehicleRegNumb = myArray[3];
                 newCar.VehicleWheels = Convert.ToInt32(myArray[4]);
-                myGarage.Add(newCar);*/
+                myGarage.Add(newCar);
 
                 if (myInput.ToLower() == "y" || myInput.ToLower() == "yes")
                 {
