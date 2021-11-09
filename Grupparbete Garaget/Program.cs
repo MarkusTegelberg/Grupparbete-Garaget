@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Globalization;
 
-//Markus Gren
-
 namespace Grupparbete_Garaget
 {
     class Program
@@ -329,7 +327,6 @@ namespace Grupparbete_Garaget
             {
                 Console.WriteLine("Something went wrong.");
             }
-
         }
     }
 }
