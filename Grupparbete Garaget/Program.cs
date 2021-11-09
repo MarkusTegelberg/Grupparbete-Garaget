@@ -300,7 +300,6 @@ namespace Grupparbete_Garaget
                             default:
                                 break;
                         }
-
                     }
                     if (VehicleFound == false)
                     {

@@ -15,7 +15,6 @@ namespace Grupparbete_Garaget
             var rand = new Random();
             VehicleColor = Colors[rand.Next(0, 2)];
             VehicleWheels = 8;
-            //VehicleRegNumb = rand.Next(100000, 999999);
             TruckTrailer = rand.Next(0, 2) > 0;
             TruckCompany = TruckComp[rand.Next(0, 2)];
             TruckMaxLoad = rand.Next(4, 20);

@@ -15,7 +15,6 @@ namespace Grupparbete_Garaget
             var rand = new Random();
             VehicleColor = Colors[rand.Next(0, 2)];
             VehicleWheels = 6;
-            //VehicleRegNumb = rand.Next(100000, 999999);
             BusSchool = rand.Next(0, 2) > 0;
             BusPurpose = BusPurp[rand.Next(0, 2)];
             BusCapacity = rand.Next(8, 46);

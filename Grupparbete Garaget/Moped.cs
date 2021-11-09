@@ -15,7 +15,6 @@ namespace Grupparbete_Garaget
             var rand = new Random();
             VehicleColor = Colors[rand.Next(0, 2)];
             VehicleWheels = 2;
-            //VehicleRegNumb = rand.Next(100000, 999999);
             MopedLegal = rand.Next(0, 2) > 0;
             MopedHowCool = MopedHowCoolArray[rand.Next(0, 2)];
             MopedMaxSpeed = rand.Next(25, 120);

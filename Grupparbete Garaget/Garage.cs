@@ -7,7 +7,6 @@ namespace Grupparbete_Garaget
 {
     public class Garage<T> : IEnumerable where T: Vehicle
     {
-        //List<Vehicle> VehicleList = new List<Vehicle>();
         Vehicle[] VehicleArray;
         int max = 20;
         public GarageEnum GetEnumerator()

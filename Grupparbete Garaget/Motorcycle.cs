@@ -15,7 +15,6 @@ namespace Grupparbete_Garaget
             var rand = new Random();
             VehicleColor = Colors[rand.Next(0, 2)];
             VehicleWheels = 3;
-            //VehicleRegNumb = rand.Next(100000, 999999);
             BikeStickers = rand.Next(0, 2) > 0;
             BikePurpose = BikePurp[rand.Next(0, 2)];
             BikeMaxFuel = rand.Next(4, 16);

@@ -15,7 +15,6 @@ namespace Grupparbete_Garaget
             var rand = new Random();
             VehicleColor = Colors[rand.Next(0, 2)];
             VehicleWheels = 4;
-            //VehicleRegNumb = rand.Next(100000, 999999);
             CarTowbar = rand.Next(0, 2) > 0;
             CarOrigin = CarOriginArray[rand.Next(0, 2)];
             CarMaxSpeed = rand.Next(120, 320);
