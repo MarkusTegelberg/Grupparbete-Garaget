@@ -18,6 +18,7 @@ namespace Grupparbete_Garaget
             while (myGarage.GarageOpen)
             {
                 myGarage.ListVehicles();
+                myGarage.ListTypeOfVehicles();
                 string UserInput = Console.ReadLine().ToLower();
                 Console.WriteLine();
 

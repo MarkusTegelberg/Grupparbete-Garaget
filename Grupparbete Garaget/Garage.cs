@@ -37,6 +37,7 @@ namespace Grupparbete_Garaget
                 myCars.CarTowbar = rand.Next(0, 2) > 0;
                 myCars.CarOrigin = CarOrigin[rand.Next(0, 2)];
                 myCars.CarMaxSpeed = rand.Next(120, 320);
+                myCars.VehicleAmmount = rand.Next(1, 5);
                 CarList.Add(myCars);
             }
             for (int i = 0; i < rand.Next(1, 3); i++)
@@ -48,6 +49,7 @@ namespace Grupparbete_Garaget
                 myTrucks.TruckTrailer = rand.Next(0, 2) > 0;
                 myTrucks.TruckCompany = TruckComp[rand.Next(0, 2)];
                 myTrucks.TruckMaxLoad = rand.Next(4, 20);
+                myTrucks.VehicleAmmount = rand.Next(1, 3);
                 TruckList.Add(myTrucks);
             }
             for (int i = 0; i < rand.Next(1, 3); i++)
@@ -59,6 +61,7 @@ namespace Grupparbete_Garaget
                 myBus.BusSchool = rand.Next(0, 2) > 0;
                 myBus.BusPurpose = BusPurp[rand.Next(0, 2)];
                 myBus.BusCapacity = rand.Next(8, 46);
+                myBus.VehicleAmmount = rand.Next(1, 3);
                 BusList.Add(myBus);
             }
             for (int i = 0; i < rand.Next(1, 3); i++)
@@ -70,6 +73,7 @@ namespace Grupparbete_Garaget
                 myMopeds.MopedLegal = rand.Next(0, 2) > 0;
                 myMopeds.MopedHowCool = MopedHowCool[rand.Next(0, 2)];
                 myMopeds.MopedMaxSpeed = rand.Next(25, 120);
+                myMopeds.VehicleAmmount = rand.Next(1, 10);
                 MopedList.Add(myMopeds);
             }
             for (int i = 0; i < rand.Next(1, 3); i++)
@@ -81,9 +85,35 @@ namespace Grupparbete_Garaget
                 myMC.BikeStickers = rand.Next(0, 2) > 0;
                 myMC.BikePurpose = BikePurp[rand.Next(0, 2)];
                 myMC.BikeMaxFuel = rand.Next(4, 16);
+                myMC.VehicleAmmount = rand.Next(1, 5);
                 MotorcycleList.Add(myMC);
             }
         }
+        public void ListTypeOfVehicles()
+        {
+            foreach (Car car in CarList)
+            {
+                Console.WriteLine("There is {0} cars in the garage.",car.VehicleAmmount);
+            }
+            foreach (Truck truck in TruckList)
+            {
+                Console.WriteLine("There is {0} trucks in the garage.",truck.VehicleAmmount);
+            }
+            foreach (Bus bus in BusList)
+            {
+                Console.WriteLine("There is {0} bus in the garage", bus.VehicleAmmount);
+            }
+            foreach (Moped moped in MopedList)
+            {
+                Console.WriteLine("There is {0} moped in the garage", moped.VehicleAmmount);
+            }
+            Console.WriteLine("--------------------------\n Available Motorcycles\n ");
+            foreach (Motorcycle mc in MotorcycleList)
+            {
+                Console.WriteLine("There is {0} Motercycle in the garage", mc.VehicleAmmount);
+            }
+        }
+
         public void ListVehicles()
         {
             //Skrivs inte ut?

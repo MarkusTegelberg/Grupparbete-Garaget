@@ -9,5 +9,7 @@ namespace Grupparbete_Garaget
         public int VehicleWheels { get; set; }
         public int VehicleRegNumb { get; set; }
         public string VehicleColor { get; set; }
+
+        public int VehicleAmmount { get; set; }
     }
 }
